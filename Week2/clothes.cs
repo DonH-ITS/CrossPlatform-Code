@@ -2,7 +2,7 @@
 
 public class Clothes
 {
-    public string colour { get; }
+    public string Colour { get; }
     
     public Clothes(string colour) {
         this.colour = colour;
