@@ -5,7 +5,7 @@ public class Clothes
     public string Colour { get; }
     
     public Clothes(string colour) {
-        this.colour = colour;
+        Colour = colour;
     }
 
     public virtual string WhatType() {
