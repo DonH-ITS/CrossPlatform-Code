@@ -9,11 +9,11 @@ public class Clothes
     }
 
     public virtual string WhatType() {
-        return "I am clothes with colour " + colour;
+        return "I am clothes with colour " + Colour;
     }
 
     public override string ToString() {
-        return colour + " clothes";
+        return Colour + " clothes";
     }
 }
 
@@ -29,12 +29,12 @@ public class Shirt : Clothes{
             result += "long ";
         else
             result += "short ";
-        result += "sleeved " + colour + " shirt";
+        result += "sleeved " + Colour + " shirt";
         return result;
     }
 
     public override string ToString() {
-        return colour + " shirt";
+        return Colour + " shirt";
     }
 }
 
