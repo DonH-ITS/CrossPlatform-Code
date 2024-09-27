@@ -11,7 +11,10 @@
         private void OnCounterClicked(object sender, EventArgs e) {
             count++;
             CounterBtn.BackgroundColor = Color.FromRgb(50, 100, 100);
-
+            if (MyActivityIndicator.IsRunning)
+                MyActivityIndicator.IsRunning = false;
+            else
+                MyActivityIndicator.IsRunning = true;
             if (count == 1)
                 CounterBtn.Text = $"Clicked {count} time";
             else

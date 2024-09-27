@@ -12,8 +12,8 @@
                 <Label Text="Hello1" MinimumWidthRequest="300" FontSize="50"/>
                 <Label Text="Hello2"/>
             </HorizontalStackLayout>
-            <Entry x:Name="NameEntry" Placeholder="What is your name?" TextChanged="Entry_TextChanged"/>
-            <ActivityIndicator IsRunning="False"/>
+            <Entry x:Name="NameEntry" Placeholder="What is your name?"  TextChanged="Entry_TextChanged" />
+            <ActivityIndicator x:Name="MyActivityIndicator" IsRunning="False"/>
             <Image
                 Source="dotnet_bot.png"
                 HeightRequest="185"
@@ -40,16 +40,22 @@
             <Slider x:Name="slider"
         Minimum="0" Maximum="100"
         VerticalOptions="CenterAndExpand"/>
-            <Stepper x:Name="stepper"
-         Minimum="0" Maximum="10" Increment="0.1"
-         HorizontalOptions="Center"
-         VerticalOptions="CenterAndExpand" />
-
 
             <Label Text="{Binding Source={x:Reference slider},
-       Path=Value, StringFormat='Slider value is {0:F1}'}"
-       FontSize="Large" HorizontalOptions="Center"
-       VerticalOptions="CenterAndExpand" />
+           Path=Value, StringFormat='Slider value is {0:F1}'}"
+           FontSize="Large" HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <HorizontalStackLayout>
+                <Stepper x:Name="stepper" Minimum="0" Maximum="10" Increment="0.1" HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+
+                <Label Text="{Binding Source={x:Reference stepper},
+            Path=Value, StringFormat='stepper value is {0:F1}'}"
+            FontSize="Large" HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+
+
+            </HorizontalStackLayout>
 
             <SearchBar Placeholder="Search For…"
                      SearchButtonPressed="SearchBar_SearchButtonPressed" />
