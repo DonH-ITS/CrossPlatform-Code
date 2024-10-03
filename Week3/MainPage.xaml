@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PressandRelease.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Button Text="Press to Rotate Text!"
+                VerticalOptions="Center"
+                Pressed="OnButtonPressed"
+                Released="OnButtonReleased"
+                    BackgroundColor="BlueViolet"
+                    HorizontalOptions="Center"/>
+            <Label Text="I'm going to rotate" x:Name="label"/>
+            <Label x:Name="lblTimer"/>
+
+            <Entry TextChanged="Entry_TextChanged" Completed="Entry_Completed"/>
+            <Label x:Name="lblEntryChange" Text="My name is "/>
+            <Label x:Name="lblEntryFinished" Text="Finished Name is : "/>
+            <Button x:Name="btnWhichPlatform" Text="Which Platform" Clicked="btnWhichPlatform_Clicked"/>
+            <BoxView Color="Red" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
+                    <BoxView.GestureRecognizers>
+                        <SwipeGestureRecognizer Swiped="OnSwipeGesture" Threshold="5" Direction="Left"/>
+                        <SwipeGestureRecognizer Swiped="OnSwipeGesture" Direction="Right"/>
+                        <SwipeGestureRecognizer Swiped="OnSwipeGesture" Direction="Down"/>
+                        <SwipeGestureRecognizer Swiped="OnSwipeGesture" Direction="Up"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Label x:Name="LblWork" Text="Test"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
