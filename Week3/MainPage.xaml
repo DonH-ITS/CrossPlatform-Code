@@ -14,6 +14,17 @@
             <Label Text="I'm going to rotate" x:Name="label"/>
             <Label x:Name="lblTimer"/>
 
+           <!-- <Image x:Name="img1" Source="Images/Mastermind.png" 	     
+        VerticalOptions="CenterAndExpand" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="img1_Tapped" NumberOfTapsRequired="2"/>
+                    <PinchGestureRecognizer PinchUpdated="PinchGestureRecognizer_PinchUpdated"/>
+                </Image.GestureRecognizers>
+            </Image>-->
+
+
+
+
             <Entry TextChanged="Entry_TextChanged" Completed="Entry_Completed"/>
             <Label x:Name="lblEntryChange" Text="My name is "/>
             <Label x:Name="lblEntryFinished" Text="Finished Name is : "/>
@@ -27,6 +38,36 @@
                     </BoxView.GestureRecognizers>
                 </BoxView>
                 <Label x:Name="LblWork" Text="Test"/>
+            <Image Source="dotnet_bot.png" WidthRequest="200" Aspect="AspectFit" x:Name="imgBot"/>
+            <HorizontalStackLayout>
+                <Ellipse Fill="DarkBlue" Stroke="Red" StrokeThickness="4" WidthRequest="150" HeightRequest="50" HorizontalOptions="Start" />
+                
+                <Path WidthRequest="200" HeightRequest="200" Data="M 10,100 L 100,100 100,50Z" Stroke="Black" Aspect="Uniform"
+                HorizontalOptions="Start" />
+                 
+
+            <Path WidthRequest="200" HeightRequest="200" Stroke="Red"
+      Aspect="Uniform"
+      HorizontalOptions="Start">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigureCollection>
+                                <PathFigure IsClosed="True"
+                                StartPoint="10,100">
+                                    <PathFigure.Segments>
+                                        <PathSegmentCollection>
+                                            <LineSegment Point="100,100" />
+                                            <LineSegment Point="100,50" />
+                                        </PathSegmentCollection>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 

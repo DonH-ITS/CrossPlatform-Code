@@ -6,6 +6,7 @@ namespace PressandRelease
     {
         IDispatcherTimer timer;
         int timeElapsed = 0;
+        bool tapGesture = false;
 
         public MainPage() {
             InitializeComponent();
@@ -48,6 +49,19 @@ namespace PressandRelease
 
         private void btnWhichPlatform_Clicked(object sender, EventArgs e) {
             LblWork.Text = DeviceInfo.Current.Platform.ToString();
+            if (!tapGesture) {
+                TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
+                tapGestureRecognizer.Tapped += OnImageTapped;
+                imgBot.GestureRecognizers.Add(tapGestureRecognizer);
+            }
+        }
+
+        private void OnImageTapped(object sender, EventArgs e) {
+            DisplayAlert("You have tapped the image", "img tap", "OK");
+        }
+
+        private void PinchGestureRecognizer_PinchUpdated(object sender, PinchGestureUpdatedEventArgs e) {
+
         }
     }
 }
