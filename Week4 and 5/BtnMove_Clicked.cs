@@ -22,10 +22,10 @@ private void BtnMove_Clicked(object sender, EventArgs e)
     //We are going to do a loop over all the Children of the grid finding all the objects that are there, looking for a match
     foreach (var item in GridPageContent.Children)
     {
-        //We only want to search Frames, so ignore all other types of items
-        if (item.GetType() == typeof(Frame))
+        //We only want to search borders, so ignore all other types of items
+        if (item.GetType() == typeof(Border))
         {
-            //Cast the object to type Frame so we can use all the Frame attributes and methods
+            //Cast the object to type Border so we can use all the Frame attributes and methods
             Border border = (Border)item;
 
             //Search for a match, if we find one, do the move and exit out of the loop with break
