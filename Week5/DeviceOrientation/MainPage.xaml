@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeviceOrientation.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+            
+
+            <Button Text="Height Width"
+                    Clicked="Button_Clicked"/>
+            <Label x:Name="outputLbl" Text="This will change"/>
+            <Label x:Name="heightDisplay"/>
+            <Label x:Name="widthDisplay"/>
+
+            <Button Text="Change Dimensions" Clicked="Button_Clicked_1"/>
+
+            <Label x:Name="timerLbl" Text="Timer Goes Here"/>
+            <Label x:Name="timerDispatchlbl" Text="Dispatch Timer Goes Here"/>
+            <Button
+    x:Name="TimerBtn"
+    Text="Click me to Start/Stop Timer"
+    Clicked="TimerBtn_Clicked"
+    HorizontalOptions="Center" />
+
+            <Button x:Name="TimerBtn2" Text="Click me to Start/Stop Timer 2"
+        Clicked="TimerBtn2_Clicked"
+        HorizontalOptions="Center" />
+
+            <Button x:Name="TimerBtn3" Text="Click me to Start/Stop Dispatcher Timer"
+        Clicked="DispatchTimerBtn_Clicked"
+        HorizontalOptions="Center" />
+
+            <Button x:Name="TimerElapsed" Text="What is timerElapsed?" Clicked="Button_Clicked_2" HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
