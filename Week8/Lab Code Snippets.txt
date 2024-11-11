@@ -1,0 +1,66 @@
+<VerticalStackLayout Padding="10">
+        <HorizontalStackLayout>
+            <Label Text="Enter (Perpendicular) Height:"/>
+            <Entry x:Name="HeightEntry" Placeholder="Height" Keyboard="Numeric"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Enter Width (of base):"/>
+            <Entry x:Name="WidthEntry" Placeholder="Width" Keyboard="Numeric"/>
+        </HorizontalStackLayout>
+
+
+        <Label x:Name="lblRectAnswer" Text="Area of Rectangle is: " />
+        <Label x:Name="lblTriAnswer" Text="Area of Triangle is: "/>
+        <Button x:Name="btnCalculate" Text="Calculate" WidthRequest="200" Clicked="btnCalculate_Clicked"/>
+
+    </VerticalStackLayout>
+
+
+
+---------------------------------------------------------
+
+private void btnCalculate_Clicked(object sender, EventArgs e) {
+     int height;
+     int width;
+     if (!Int32.TryParse(HeightEntry.Text, out height) || !Int32.TryParse(WidthEntry.Text, out width)) {
+         return;
+     }
+     lblRectAnswer.Text = "Area of Rectangle is:"  + (height * width);
+     lblTriAnswer.Text = "Area of Triangle is:" + (height * width / 2);
+}
+
+
+----------------------------------------------------------
+
+public string RectAnswer
+{
+    get
+    {
+        int height, width;
+        if (!Int32.TryParse(HeightText, out height) || !Int32.TryParse(WidthText, out width)) {
+            return "Area of Rectangle is: "; 
+        }
+        return "Area of Rectangle is: " + (height * width);
+    }
+}
+
+
+------------------------------------------------------------
+
+new Student { Name = "Alice Johnson", Age = 20, Major = "Computer Science" },
+            new Student { Name = "Bob Smith", Age = 22, Major = "Mathematics" },
+            new Student { Name = "Catherine Green", Age = 21, Major = "Physics" },
+            new Student { Name = "David Brown", Age = 23, Major = "Engineering" }
+
+
+------------------------------------------------------------
+
+public void SortByAge()
+{
+    var sortedStudents = Students.OrderBy(s => s.Age).ToList();
+    Students.Clear();
+    foreach (var student in sortedStudents)
+    {
+        Students.Add(student);
+    }
+}
