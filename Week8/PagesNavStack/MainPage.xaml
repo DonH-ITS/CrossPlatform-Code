@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PagesNavStack.MainPage"
+             Title="First Page">
+    
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Go to Page 2" Clicked="ButtonPage2_Clicked" />
+    </ContentPage.ToolbarItems>
+    <VerticalStackLayout x:Name="mainlayout">
+        <Label Text="Welcome to Page 1!" HorizontalOptions="CenterAndExpand" />
+        <HorizontalStackLayout>
+            <Label Text="Enter Your Name : " Margin="10,10,10,10"/>
+            <Entry x:Name="nameEntry" WidthRequest="300"/>
+
+        </HorizontalStackLayout>
+        <Button Text="Go to Page 2" Clicked="ButtonPage2_Clicked" />
+        <Button Text="Open Modal Page" Clicked="OpenModalPage_Clicked" />
+    </VerticalStackLayout>
+
+</ContentPage>
